@@ -9,6 +9,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /* HEADER */
 header{
     display: flex;
@@ -92,39 +93,7 @@ header{
     padding-top: 2px;
     display: block;
 }
-/* PROMO */
-.wrapper__promo{
-    max-width: 1200px;
-    height: 300px;
-    background-image: url(../Images/promo.png);
-    background-repeat: no-repeat;
-    filter: drop-shadow(0px 7px 12px rgba(158, 158, 163, 0.1));
-    display: flex;
-    align-items: center;
 
-}
-.promo__text{
-    padding-left: 70px;
-    max-width: 580px;
-}
-
-.wrapper__promo h1{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 39px;
-    line-height: 46px;
-    color: #302C34;
-    margin-bottom: 15px;
-}
-.wrapper__promo h2 {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: #302C34;
-}
 /* FOOD SECTION */
 section.food{
     margin-top: 56px;
@@ -133,8 +102,17 @@ section.food{
 .food__title{
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
     margin-bottom: 44px;
+}
+.title__info {
+    display: flex;
+}
+.title__info .additional__price{
+    color: #8C8C8C;
+    margin-left: 0px;
+    font-weight: 400;
+    font-size: 18px;
 }
 .food__title h1{
     font-family: 'Roboto';
@@ -156,51 +134,37 @@ section.food{
     grid-gap: 24px;
 }
 .food__card{
-    height: 377px;
+    height: 414px;
     background: #FFFFFF;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 7px;
 }
-.food__card:hover{
-    transform: scale(1.02);
-    transition: transform 0.3s;
-    opacity: 0.7;
-}
 .card__info{
+    height: 158px;
     margin: 20px auto;
-    max-width: 335px;
-}
-.info__title{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    max-width: 337px;
 }
 .info__title h2{
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 24px;
     line-height: 32px;
     color: #000000;
+    margin-bottom: 10px;
 }
-.info__title span{
-    font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 20px;
-        color: #FFFFFF;
-    display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 1px 8px;
-        gap: 10px;
-        width: 55px;
-        height: 22px;
-        background: #262626;
-        border-radius: 2px;
+.info__title h3{
+   font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #8C8C8C;
 }
+
 .info__additional{
     display: flex;
     align-items: center;
@@ -211,6 +175,7 @@ section.food{
     background-repeat: no-repeat;
     padding-left: 22px;
     margin-right: 26px;
+
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -221,10 +186,11 @@ section.food{
 .additional__price{ 
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 32px;
-    color: #8C8C8C;
+    color: #000000;
+    margin-left: 32px;
 }
 .additional__food{
     list-style-position: inside;
@@ -241,12 +207,36 @@ section.food{
 .additional__food li span{
     margin-left: -6px;
 }
+.btn-incart{
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 4px;
+    width: 124px;
+    height: 40px;
+    background: #1890FF;
+    border-radius: 2px; 
+    border: none;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.btn-incart:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+}
 /* FOOTER */
 footer{
     background: #FFFFFF;
     min-height: 156px;
     align-items: center;
 }
+
 .footer__wrapper{
     max-width: 1200px;
     margin: 0 auto;
@@ -309,6 +299,8 @@ footer{
         height: 100%;
     }
     .card__info {
+        height: 200px;
+        margin: 40px auto;
         max-width: 270px;
     }
     .footer__wrapper {
@@ -333,7 +325,9 @@ footer{
         grid-gap: 30px;
     }
     .card__info {
-        max-width: 335px;
+        height: 158px;
+        margin: 20px auto;
+        max-width: 337px;
     }
     .footer__wrapper {
         max-width: 800px;
@@ -360,6 +354,8 @@ footer{
         grid-template-columns: 384px;
     }
     .card__info {
+        height: 200px;
+        margin: 40px auto;
         max-width: 335px;
     }
     .footer__wrapper {
