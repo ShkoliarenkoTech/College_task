@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./fonts/stylesheet.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100">
     <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Delivery Food - доставка еды на дом</title>
 </head>
 <body>
@@ -17,13 +18,19 @@
             <input type="text" class="input header__search " placeholder="Адрес доставки">
         </div>
         <div class="header__buttons">
-            <button class="btn btn-login">
+            <span class="user-name"></span>
+            <button class="btn btn-login" id="login-button">
                 <img src="./Images/Icons/man-icon.svg" alt="man" class="button__thumb">
                 <span class="button__text">Войти</span>
             </button>
-            <button class="btn btn-cart">
+            <button class="btn btn-login" id="out-button">
+                <img src="./Images/Icons/man-icon.svg" alt="man" class="button__thumb">
+                <span class="button__text">Выйти</span>
+            </button>
+            <button class="btn btn-cart" id="cart-button">
                 <img src="./Images/Icons/shopping-cart.svg" alt="cart" class="button__thumb">
                 <span class="button__text">Корзина</span>
+    @@ -218,6 +223,32 @@ <h3 class="dialog__title">Корзина</h3>
             </button>
         </div>
     </header>
@@ -42,7 +49,7 @@
                 </div>
                 <div class="food__cards">
                    <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card animate__animated animate__fadeInUp delay-1">
                             <img src="./Images/card-1.png" alt="card-1" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -60,7 +67,7 @@
                         </div>
                     </a>
                     <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card animate__animated animate__fadeInUp delay-1">
                             <img src="./Images/card-2.png" alt="card-2" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -78,7 +85,7 @@
                         </div>
                     </a>
                     <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card animate__animated animate__fadeInUp delay-1">
                             <img src="./Images/card-3.png" alt="card-3" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -96,7 +103,7 @@
                         </div>
                     </a>
                     <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card wow animated__fadeInUp" data-wow-delay="0.4s">
                             <img src="./Images/card-4.png" alt="card-4" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -114,7 +121,7 @@
                         </div>
                     </a>
                     <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card wow animated__fadeInUp" data-wow-delay="0.4s">
                             <img src="./Images/card-5.png" alt="card-5" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -132,7 +139,7 @@
                         </div>
                     </a>
                     <a href="./restaurant.html">
-                        <div class="food__card">
+                        <div class="food__card wow animated__fadeInUp" data-wow-delay="0.4s">
                             <img src="./Images/card-6.png" alt="card-6" class="card__thumb">
                             <div class="card__info">
                                 <div class="info__title">
@@ -171,5 +178,77 @@
             </ul>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="dialog__header">
+                <h3 class="dialog__title">Корзина</h3>
+                <button class="dialog__btn-close">&times;</button>
+            </div>
+            <div class="dialog__body dialog__foods">
+                <div class="dialog__food">
+                    <span class="food__name">Ролл угорь стандарт</span>
+                    <strong class="food__price">250 ₽</strong>
+                    <div class="food__counter">
+                        <button class="counter__button minus-btn">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter__button plus-btn">+</button>
+                    </div>
+                </div>
+                <div class="dialog__food">
+                    <span class="food__name">Ролл угорь стандарт</span>
+                    <strong class="food__price">250 ₽</strong>
+                    <div class="food__counter">
+                        <button class="counter__button minus-btn">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter__button plus-btn">+</button>
+                    </div>
+                </div>
+                <div class="dialog__food">
+                    <span class="food__name">Ролл угорь стандарт</span>
+                    <strong class="food__price">250 ₽</strong>
+                    <div class="food__counter">
+                        <button class="counter__button minus-btn">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter__button plus-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__footer">
+                <span class="footer__price">750 ₽</span>
+                <div class="footer__buttons">
+                    <button class="footer__btn btn-success">Оформить заказ</button>
+                    <button class="footer__btn btn-cancel">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-auth">
+        <div class="modal__dialog">
+            <div class="dialog__header">
+                <h3 class="dialog__title">Авторизация</h3>
+                <button class="close-auth">&times;</button>
+            </div>
+            <form class="dialog__body" id="loginForm">
+               <fieldset class="modal-body">
+                    <label class="label-auth">
+                        <span>Логин</span>
+                        <input type="text" id="login">
+                    </label>
+                    <label class="label-auth">
+                        <span>Пароль</span>
+                        <input type="password" id="password">
+                    </label>
+               </fieldset>
+               <div class="modal__footer">
+                    <div class="footer-buttons">
+                        <button class="modal-btn-login">Войти</button>
+                    </div>
+               </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script/wow.min.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
