@@ -25,6 +25,17 @@ let login = localStorage.getItem("pizzaAuth");
 
 function toggleAuthModal() {
   authModal.classList.toggle("is-open");
+  loginInput.style.borderColor = "";
+  if (authModal.classList.contains("is-open")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
+}
+
+function clearForm() {
+  loginInput.style.borderColor = "#ff0000";
+  loginForm.reset();
 }
 
 function authorized() {
@@ -55,23 +66,32 @@ function notAuthorized() {
   console.log("Not authorized");
 
   function logIn(event) {
-    event.preventDefault();
-    login = loginInput.value;
-
-    localStorage.setItem("pizzaAuth", login);
-
-    toggleAuthModal();
-    authButton.removeEventListener("click", toggleAuthModal);
-    authClose.removeEventListener("click", toggleAuthModal);
-    loginForm.removeEventListener("submit", logIn);
-    loginForm.reset();
-    checkAuth();
+    event.preventDefault();if (loginInput.value.trim()) {
+      login = loginInput.value;
+      localStorage.setItem("pizzaAuth", login);
+      toggleAuthModal();
+      authButton.removeEventListener("click", toggleAuthModal);
+      authClose.removeEventListener("click", toggleAuthModal);
+      loginForm.removeEventListener("submit", logIn);
+      loginForm.reset();
+      checkAuth();
+    } else {
+      loginInput.style.borderColor = "#ff0000";
+      loginInput.value = "";
+    }
   }
 
   authButton.addEventListener("click", toggleAuthModal);
   authClose.addEventListener("click", toggleAuthModal);
   loginForm.addEventListener("submit", logIn);
+  authModal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("is-open")) {
+      toggleAuthModal();
+    }
+  });
 }
+
+authButton.addEventListener("click", clearForm);
 
 function checkAuth() {
   if (login) {
