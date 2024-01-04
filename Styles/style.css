@@ -294,6 +294,10 @@ footer{
     background: rgba(0, 0, 0, 0.4);
 }
 
+.hide{
+    display: none;
+}
+
 .close-auth {
     font-size: 50px;
     border: none;
@@ -481,6 +485,133 @@ footer{
     line-height: 23px;
     color: #FAFAFA;
 }
+
+/* RESTAURANT */
+/* food__cards */
+.cards__menu {
+    display: grid;
+    grid-template-columns: 384px 384px 384px;
+    grid-gap: 24px;
+    margin-top: 56px;
+    margin-bottom: 50px;
+}
+
+.food__card {
+    height: 414px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+}
+
+.menu-card__info {
+    height: 158px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 337px;
+}
+.card-info__title{
+    display: flex;
+    flex-direction: column;
+}
+.menu-info__title h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.menu-info__title h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #8C8C8C;
+}
+.title__info {
+    display: flex;
+}
+
+.title__info .additional__price{
+    color: #8C8C8C;
+    margin-left: 0px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.additional__rating {
+    background-image: url(../Images/Icons/star-icon.svg);
+    background-position: 0% 39%;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+    margin-right: 26px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    color: #FFC107;
+}
+
+.card-additional__price {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+    margin-left: 32px;
+}
+
+.additional__food {
+    list-style-position: inside;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #8C8C8C;
+}
+
+.additional__food li {
+    margin-left: 10px;
+}
+
+.additional__food li span {
+    margin-left: -6px;
+}
+
+.btn-incart {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 4px;
+    width: 124px;
+    height: 40px;
+    background: #1890FF;
+    border-radius: 2px;
+    border: none;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.btn-incart:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1250px) {
     header, .wrapper{
