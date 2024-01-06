@@ -1,3 +1,5 @@
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+
 // cart button
 const cartButton = document.querySelector("#cart-button");
 const closeButton = document.querySelector(".dialog__btn-close");
@@ -183,4 +185,26 @@ logo.addEventListener("click", function () {
   containerPromo.classList.remove("hide");
   restaurants.classList.remove("hide");
   // menu.classList.add("hide");
+});
+
+// swiper (SLIDER)
+// -------------------------
+// new Swiper(".swiper-container", {
+//   sliderPerView: 1,
+//   loop: true,
+//   autoplay: true,
+//   grabCursor: true,
+//   cudeEffect: {
+//     shadow: false,
+//   },
+// });
+
+new Swiper(".swiper-container", {
+  sliderPerView: 1,
+  loop: true,
+  autoplay: true,
+  grabCursor: true,
+  cudeEffect: {
+    shadow: false,
+  },
 });

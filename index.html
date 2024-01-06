@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100">
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
     <title>Delivery Food - доставка еды на дом</title>
 </head>
 <body>
@@ -36,10 +38,30 @@
     </header>
     <main>
         <div class="wrapper">
-            <div class="wrapper__promo">
-                <div class="promo__text">
-                    <h1>Онлайн-сервис<br>доставки еды на дом</h1>
-                    <h2>Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком</h2>
+            <div class="swiper-container">
+                <div class="wrapper__promo swiper-wrapper">
+                    <section class="promo promo__pizza swiper-slide">
+                        <h1>Онлайн-сервис<br>доставки еды на дом</h1>
+                        <h2>Блюда из любимого ресторана привезет<br> курьер в перчатках, маске и с антисептиком</h2>
+                    </section>
+                    <section class="promo promo__kebab swiper-slide">
+                        <h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+                        <h2 class="promo-text">
+                            Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+                        </h2>
+                    </section>
+                    <section class="promo promo__vegetables swiper-slide">
+                        <h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+                        <h2 class="promo-text">
+                            Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+                        </h2>
+                    </section>
+                    <section class="promo promo__sushi swiper-slide">
+                        <h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
+                        <h2 class="promo-text">
+                            Скидки на сеты до 30 мая по промокоду DADADA
+                        </h2>
+                    </section>
                 </div>
             </div>
             <section class="food restaurants">
@@ -250,7 +272,7 @@
         </div>
     </div>
     <script src="./script/wow.min.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="./script/script.js" type="module"></script>
     <script src="./script/disableScroll.js"></script>
     
 </body>
