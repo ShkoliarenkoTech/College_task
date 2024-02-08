@@ -95,4 +95,10 @@ label span {
     color: #E0FFFF !important;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black; 
+
+}
+
+
+.hide {
+    display: none;
 }
